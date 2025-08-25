@@ -1135,55 +1135,52 @@ class WorkLoomApp {
     openSearchModal() {
         const searchContent = `
             <div class="search-modal">
-                <div class="search-input-container" style="margin-bottom: var(--space-6);">
-                    <div style="position: relative;">
-                        <input 
-                            type="text" 
-                            id="global-search-input" 
-                            class="form-input" 
-                            placeholder="Search jobs by title, company, skills, or location..." 
-                            style="padding-left: var(--space-10); font-size: var(--font-size-lg);"
-                            autocomplete="off"
-                        >
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%); color: var(--muted);">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="M21 21l-4.35-4.35"></path>
-                        </svg>
-                    </div>
+                <div class="search-input-container">
+                    <input 
+                        type="text" 
+                        id="global-search-input" 
+                        class="form-input" 
+                        placeholder="Search jobs by title, company, skills, or location..."
+                        autocomplete="off"
+                    >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
                 </div>
                 
                 <div id="search-results" class="search-results">
                     <div class="search-suggestions">
-                        <h4 style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing: 0.05em;">Popular Searches</h4>
-                        <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6);">
+                        <h4>Popular Searches</h4>
+                        <div class="search-tags">
                             ${this.getPopularSearches().map(term => `
-                                <button class="search-suggestion-tag" onclick="app.performSearch('${term}')" style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-2) var(--space-3); border-radius: var(--border-radius); font-size: var(--font-size-sm); cursor: pointer; transition: all var(--transition-fast);">
+                                <button class="search-suggestion-tag" onclick="app.performSearch('${term}')">
                                     ${term}
                                 </button>
                             `).join('')}
                         </div>
                         
-                        <h4 style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing: 0.05em;">Quick Actions</h4>
-                        <div style="display: grid; gap: var(--space-3);">
+                        <h4 style="margin-top: var(--space-6);">Quick Actions</h4>
+                        <div class="search-actions">
                             <button onclick="app.navigate('#/jobs'); app.closeModal();" class="search-quick-action">
-                                <span style="margin-right: var(--space-3);">💼</span>
-                                <div style="text-align: left;">
-                                    <div style="font-weight: var(--font-weight-medium);">Browse All Jobs</div>
-                                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">View all available positions</div>
+                                <span>💼</span>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Browse All Jobs</div>
+                                    <div style="font-size: var(--text-sm); color: var(--color-gray-600);">View all available positions</div>
                                 </div>
                             </button>
                             <button onclick="app.navigate('#/saved'); app.closeModal();" class="search-quick-action">
-                                <span style="margin-right: var(--space-3);">❤️</span>
-                                <div style="text-align: left;">
-                                    <div style="font-weight: var(--font-weight-medium);">Saved Jobs</div>
-                                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">View your saved positions</div>
+                                <span>❤️</span>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Saved Jobs</div>
+                                    <div style="font-size: var(--text-sm); color: var(--color-gray-600);">View your saved positions</div>
                                 </div>
                             </button>
                             <button onclick="app.openPostJobModal();" class="search-quick-action">
-                                <span style="margin-right: var(--space-3);">📝</span>
-                                <div style="text-align: left;">
-                                    <div style="font-weight: var(--font-weight-medium);">Post a Job</div>
-                                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">List your open position</div>
+                                <span>📝</span>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Post a Job</div>
+                                    <div style="font-size: var(--text-sm); color: var(--color-gray-600);">List your open position</div>
                                 </div>
                             </button>
                         </div>
@@ -1261,36 +1258,36 @@ class WorkLoomApp {
     renderSearchSuggestions() {
         return `
             <div class="search-suggestions">
-                <h4 style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing: 0.05em;">Popular Searches</h4>
-                <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6);">
+                <h4>Popular Searches</h4>
+                <div class="search-tags">
                     ${this.getPopularSearches().map(term => `
-                        <button class="search-suggestion-tag" onclick="app.performSearch('${term}')" style="background: var(--surface); border: 1px solid var(--border); padding: var(--space-2) var(--space-3); border-radius: var(--border-radius); font-size: var(--font-size-sm); cursor: pointer; transition: all var(--transition-fast);">
+                        <button class="search-suggestion-tag" onclick="app.performSearch('${term}')">
                             ${term}
                         </button>
                     `).join('')}
                 </div>
                 
-                <h4 style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing: 0.05em;">Quick Actions</h4>
-                <div style="display: grid; gap: var(--space-3);">
+                <h4 style="margin-top: var(--space-6);">Quick Actions</h4>
+                <div class="search-actions">
                     <button onclick="app.navigate('#/jobs'); app.closeModal();" class="search-quick-action">
-                        <span style="margin-right: var(--space-3);">💼</span>
-                        <div style="text-align: left;">
-                            <div style="font-weight: var(--font-weight-medium);">Browse All Jobs</div>
-                            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">View all available positions</div>
+                        <span>💼</span>
+                        <div>
+                            <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Browse All Jobs</div>
+                            <div style="font-size: var(--text-sm); color: var(--color-gray-600);">View all available positions</div>
                         </div>
                     </button>
                     <button onclick="app.navigate('#/saved'); app.closeModal();" class="search-quick-action">
-                        <span style="margin-right: var(--space-3);">❤️</span>
-                        <div style="text-align: left;">
-                            <div style="font-weight: var(--font-weight-medium);">Saved Jobs</div>
-                            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">View your saved positions</div>
+                        <span>❤️</span>
+                        <div>
+                            <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Saved Jobs</div>
+                            <div style="font-size: var(--text-sm); color: var(--color-gray-600);">View your saved positions</div>
                         </div>
                     </button>
                     <button onclick="app.openPostJobModal();" class="search-quick-action">
-                        <span style="margin-right: var(--space-3);">📝</span>
-                        <div style="text-align: left;">
-                            <div style="font-weight: var(--font-weight-medium);">Post a Job</div>
-                            <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">List your open position</div>
+                        <span>📝</span>
+                        <div>
+                            <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Post a Job</div>
+                            <div style="font-size: var(--text-sm); color: var(--color-gray-600);">List your open position</div>
                         </div>
                     </button>
                 </div>
@@ -1302,9 +1299,9 @@ class WorkLoomApp {
         if (results.length === 0) {
             return `
                 <div style="text-align: center; padding: var(--space-8);">
-                    <div style="font-size: var(--font-size-2xl); margin-bottom: var(--space-4);">🔍</div>
-                    <h3 style="margin-bottom: var(--space-2);">No jobs found</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Try adjusting your search terms or browse all jobs.</p>
+                    <div style="font-size: var(--text-4xl); margin-bottom: var(--space-4);">🔍</div>
+                    <h3 style="margin-bottom: var(--space-2); color: var(--color-gray-900);">No jobs found</h3>
+                    <p style="color: var(--color-gray-600); margin-bottom: var(--space-4);">Try adjusting your search terms or browse all jobs.</p>
                     <button onclick="app.navigate('#/jobs'); app.closeModal();" class="btn btn--outline">Browse All Jobs</button>
                 </div>
             `;
@@ -1313,15 +1310,15 @@ class WorkLoomApp {
         return `
             <div class="search-results-list">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
-                    <h4 style="color: var(--text); font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">Search Results</h4>
-                    <span style="color: var(--text-secondary); font-size: var(--font-size-sm);">${results.length} results</span>
+                    <h4 style="color: var(--color-gray-900); font-size: var(--text-lg); font-weight: var(--font-weight-semibold); margin: 0;">Search Results</h4>
+                    <span style="color: var(--color-gray-600); font-size: var(--text-sm);">${results.length} results</span>
                 </div>
                 
-                <div style="display: grid; gap: var(--space-3); max-height: 400px; overflow-y: auto; margin-bottom: var(--space-4);">
+                <div style="display: grid; gap: var(--space-3); max-height: 350px; overflow-y: auto; margin-bottom: var(--space-4);">
                     ${results.map(job => this.renderSearchResultItem(job, query)).join('')}
                 </div>
                 
-                <div style="text-align: center; padding-top: var(--space-4); border-top: 1px solid var(--border);">
+                <div style="text-align: center; padding-top: var(--space-4); border-top: 1px solid var(--color-gray-200);">
                     <button onclick="app.performSearch('${query}')" class="btn btn--primary">
                         View All Results (${this.searchJobs(query).length})
                     </button>
@@ -1334,35 +1331,35 @@ class WorkLoomApp {
         const highlightText = (text, query) => {
             if (!query) return text;
             const regex = new RegExp(`(${query})`, 'gi');
-            return text.replace(regex, '<mark style="background: var(--primary-light); color: var(--primary); padding: 1px 2px; border-radius: 2px;">$1</mark>');
+            return text.replace(regex, '<mark>$1</mark>');
         };
         
         return `
-            <div class="search-result-item" onclick="app.navigate('#/jobs/${job.id}'); app.closeModal();" style="display: flex; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--border-radius); cursor: pointer; transition: all var(--transition-fast);">
-                <div class="job-logo" style="width: 48px; height: 48px; background: var(--surface); border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-semibold); color: var(--primary); flex-shrink: 0;">
+            <div class="search-result-item" onclick="app.navigate('#/jobs/${job.id}'); app.closeModal();">
+                <div class="job-logo">
                     ${job.logo}
                 </div>
                 <div style="flex: 1; min-width: 0;">
-                    <h5 style="font-size: var(--font-size-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1); color: var(--text);">
+                    <h5 style="font-size: var(--text-base); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1); color: inherit; line-height: var(--leading-tight);">
                         ${highlightText(job.title, query)}
                     </h5>
-                    <p style="color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--space-2);">
+                    <p style="color: inherit; opacity: 0.8; font-size: var(--text-sm); margin-bottom: var(--space-2); line-height: var(--leading-snug);">
                         ${highlightText(job.company, query)} • ${highlightText(job.location, query)}
                     </p>
                     <div style="display: flex; flex-wrap: wrap; gap: var(--space-1);">
                         ${job.tags.slice(0, 3).map(tag => `
-                            <span class="tag" style="font-size: var(--font-size-xs); background: var(--surface); color: var(--text-secondary); padding: 2px var(--space-2);">
+                            <span style="font-size: var(--text-xs); background: rgba(0,0,0,0.1); color: inherit; padding: 2px var(--space-2); border-radius: var(--radius-md); opacity: 0.8;">
                                 ${highlightText(tag, query)}
                             </span>
                         `).join('')}
-                        ${job.tags.length > 3 ? `<span style="color: var(--text-secondary); font-size: var(--font-size-xs);">+${job.tags.length - 3} more</span>` : ''}
+                        ${job.tags.length > 3 ? `<span style="color: inherit; opacity: 0.7; font-size: var(--text-xs);">+${job.tags.length - 3} more</span>` : ''}
                     </div>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: end; justify-content: center; text-align: right;">
-                    <div style="font-weight: var(--font-weight-semibold); color: var(--text); margin-bottom: var(--space-1);">
+                <div style="display: flex; flex-direction: column; align-items: end; justify-content: center; text-align: right; flex-shrink: 0;">
+                    <div style="font-weight: var(--font-weight-semibold); color: inherit; margin-bottom: var(--space-1); font-size: var(--text-sm);">
                         $${job.salaryMin.toLocaleString()}+
                     </div>
-                    <div style="font-size: var(--font-size-xs); color: var(--text-secondary);">
+                    <div style="font-size: var(--text-xs); color: inherit; opacity: 0.7;">
                         ${job.type}
                     </div>
                 </div>
@@ -1398,12 +1395,28 @@ class WorkLoomApp {
             }
         });
         
-        // Setup salary range sliders
+        // Setup salary range sliders with enhanced mobile support
         const salaryMin = document.getElementById('salary-min');
         const salaryMax = document.getElementById('salary-max');
         if (salaryMin && salaryMax) {
+            // Add event listeners for better mobile interaction
             salaryMin.addEventListener('input', () => this.updateSalaryFilter());
             salaryMax.addEventListener('input', () => this.updateSalaryFilter());
+            
+            // Add visual feedback for mobile touch
+            [salaryMin, salaryMax].forEach(slider => {
+                slider.addEventListener('touchstart', (e) => {
+                    slider.style.transform = 'scale(1.02)';
+                    slider.style.transition = 'transform 0.1s ease';
+                });
+                
+                slider.addEventListener('touchend', (e) => {
+                    slider.style.transform = 'scale(1)';
+                    setTimeout(() => {
+                        slider.style.transition = '';
+                    }, 100);
+                });
+            });
         }
     }
     
