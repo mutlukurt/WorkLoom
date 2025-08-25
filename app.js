@@ -32,6 +32,52 @@ class WorkLoomApp {
         await this.loadJobs();
         this.setupRouter();
         this.navigate(window.location.hash || '#/');
+    }    
+    
+    // ===== SCROLL MANAGEMENT =====
+    scrollToTop() {
+        // Multiple fallback methods for cross-device compatibility
+        try {
+            // Method 1: Modern browsers with smooth scrolling
+            if ('scrollTo' in window && window.scrollTo) {
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Method 2: Fallback for older browsers or mobile issues
+            if (document.documentElement && document.documentElement.scrollTop > 0) {
+                document.documentElement.scrollTop = 0;
+            }
+            
+            // Method 3: Additional fallback for body scrolling
+            if (document.body && document.body.scrollTop > 0) {
+                document.body.scrollTop = 0;
+            }
+            
+            // Method 4: iOS Safari and mobile webkit specific fix
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                mainContent.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start',
+                    inline: 'nearest'
+                });
+            }
+            
+        } catch (error) {
+            // Final fallback - instant scroll for problematic browsers
+            console.warn('Smooth scroll failed, using instant scroll:', error);
+            try {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            } catch (e) {
+                console.error('All scroll methods failed:', e);
+            }
+        }
     }
     
     // ===== ROUTER =====
@@ -49,6 +95,9 @@ class WorkLoomApp {
         this.currentRoute = hash;
         this.updateActiveNavLinks();
         this.announceRouteChange(hash);
+        
+        // Enhanced scroll to top for all devices (mobile, tablet, desktop)
+        this.scrollToTop();
         
         const routes = {
             '#/': () => this.renderHome(),
@@ -73,6 +122,8 @@ class WorkLoomApp {
             setTimeout(() => {
                 route();
                 this.hideLoading();
+                // Ensure scroll to top after content is rendered
+                setTimeout(() => this.scrollToTop(), 50);
             }, 100);
         } else {
             this.render404();
@@ -416,8 +467,10 @@ class WorkLoomApp {
         
         // Mobile nav links
         mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
                 console.log('Mobile nav link clicked:', link.getAttribute('href'));
+                // Ensure scroll to top for mobile navigation
+                this.scrollToTop();
                 // Close mobile menu after navigation
                 setTimeout(() => {
                     this.closeMobileMenu();
@@ -1382,6 +1435,8 @@ class WorkLoomApp {
                 this.currentFilters.keyword = query;
                 this.applyFilters();
                 this.updateJobsDisplay();
+                // Ensure scroll to top after search results are displayed
+                setTimeout(() => this.scrollToTop(), 100);
             }
         }, 200);
     }
@@ -1917,7 +1972,7 @@ class WorkLoomApp {
     renderJobDetail(jobId) {
         const job = this.jobs.find(j => j.id === jobId);
         if (!job) { this.render404(); return; }
-        const content = `<div class="container"><button class="btn btn--ghost" onclick="history.back()" style="margin-bottom: var(--space-6);">← Back to Jobs</button><div class="card"><div class="job-card__header"><div class="job-card__logo" style="width: 64px; height: 64px; font-size: var(--font-size-xl);">${job.logo}</div><div class="job-card__info"><h1 class="job-card__title" style="font-size: var(--font-size-2xl);">${job.title}</h1><p class="job-card__company" style="font-size: var(--font-size-lg);">${job.company}</p><div class="job-card__meta"><span>${job.location}</span><span>•</span><span>${job.type}</span></div></div></div><div class="job-card__tags" style="margin: var(--space-6) 0;">${job.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div><div style="margin-bottom: var(--space-6);"><h2 style="margin-bottom: var(--space-4);">Job Description</h2><p style="line-height: var(--line-height-relaxed);">${job.description}</p></div><div style="margin-bottom: var(--space-6);"><h2 style="margin-bottom: var(--space-4);">Requirements</h2><ul style="padding-left: var(--space-5);">${job.requirements.map(req => `<li style="margin-bottom: var(--space-2);">${req}</li>`).join('')}</ul></div><div><h2 style="margin-bottom: var(--space-4);">Benefits</h2><ul style="padding-left: var(--space-5);">${job.benefits.map(benefit => `<li style="margin-bottom: var(--space-2);">${benefit}</li>`).join('')}</ul></div><div style="margin-top: var(--space-8); text-align: center;"><div class="job-card__salary" style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">$${job.salaryMin.toLocaleString()} - $${job.salaryMax.toLocaleString()}</div><div style="display: flex; gap: var(--space-3); justify-content: center;"><button class="btn btn--primary btn--large" onclick="app.applyToJob(${job.id})">Apply Now</button><button class="btn btn--outline btn--large" onclick="app.toggleSaveJob(${job.id})">${this.savedJobs.has(job.id) ? 'Saved' : 'Save Job'}</button></div></div></div></div>`;
+        const content = `<div class="container"><button class="btn btn--ghost" onclick="app.navigate('#/jobs')" style="margin-bottom: var(--space-6);">← Back to Jobs</button><div class="card"><div class="job-card__header"><div class="job-card__logo" style="width: 64px; height: 64px; font-size: var(--font-size-xl);">${job.logo}</div><div class="job-card__info"><h1 class="job-card__title" style="font-size: var(--font-size-2xl);">${job.title}</h1><p class="job-card__company" style="font-size: var(--font-size-lg);">${job.company}</p><div class="job-card__meta"><span>${job.location}</span><span>•</span><span>${job.type}</span></div></div></div><div class="job-card__tags" style="margin: var(--space-6) 0;">${job.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div><div style="margin-bottom: var(--space-6);"><h2 style="margin-bottom: var(--space-4);">Job Description</h2><p style="line-height: var(--line-height-relaxed);">${job.description}</p></div><div style="margin-bottom: var(--space-6);"><h2 style="margin-bottom: var(--space-4);">Requirements</h2><ul style="padding-left: var(--space-5);">${job.requirements.map(req => `<li style="margin-bottom: var(--space-2);">${req}</li>`).join('')}</ul></div><div><h2 style="margin-bottom: var(--space-4);">Benefits</h2><ul style="padding-left: var(--space-5);">${job.benefits.map(benefit => `<li style="margin-bottom: var(--space-2);">${benefit}</li>`).join('')}</ul></div><div style="margin-top: var(--space-8); text-align: center;"><div class="job-card__salary" style="font-size: var(--font-size-lg); margin-bottom: var(--space-4);">$${job.salaryMin.toLocaleString()} - $${job.salaryMax.toLocaleString()}</div><div style="display: flex; gap: var(--space-3); justify-content: center;"><button class="btn btn--primary btn--large" onclick="app.applyToJob(${job.id})">Apply Now</button><button class="btn btn--outline btn--large" onclick="app.toggleSaveJob(${job.id})">${this.savedJobs.has(job.id) ? 'Saved' : 'Save Job'}</button></div></div></div></div>`;
         document.getElementById('app-content').innerHTML = content;
     }
 }

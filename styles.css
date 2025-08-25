@@ -12,6 +12,16 @@ html {
     scroll-behavior: smooth;
     height: 100%;
     font-size: 16px;
+    /* Enhanced mobile scroll optimization */
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+body {
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Improve mobile scroll performance */
+    -webkit-overflow-scrolling: touch;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3190,6 +3200,18 @@ body.modal-open {
         align-items: center;
     }
     
+    /* Enhanced tablet scroll behavior */
+    html {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+    
+    /* Job cards touch optimization for tablet */
+    .job-card {
+        -webkit-tap-highlight-color: rgba(102, 126, 234, 0.1);
+        cursor: pointer;
+    }
+    
     /* Spacing adjustments */
     .section {
         padding: var(--space-16) 0;
@@ -4146,6 +4168,9 @@ mark {
     .mobile-nav__content {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
+        /* Add momentum scrolling for iOS */
+        -webkit-scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
     }
     
     /* Prevent body scroll when mobile menu is open */
@@ -4153,6 +4178,8 @@ mark {
         overflow: hidden;
         position: fixed;
         width: 100%;
+        /* Prevent scroll on iOS Safari */
+        -webkit-overflow-scrolling: auto;
     }
 }
 
