@@ -253,12 +253,13 @@ class WorkLoomApp {
             this.closeMobileMenu();
         });
         
-        // Handle window resize
+        // Handle window resize - close mobile menu on tablet/desktop
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                this.closeMobileMenu();
-            }
+            this.handleResponsiveLayout();
         });
+        
+        // Initial responsive layout check
+        this.handleResponsiveLayout();
     }
     
     setupHeaderScrollEffect() {
@@ -331,7 +332,43 @@ class WorkLoomApp {
         }
     }
     
-    // ===== MOBILE MENU FUNCTIONALITY =====
+    // ===== RESPONSIVE UTILITIES =====
+    isTablet() {
+        return window.innerWidth >= 768 && window.innerWidth <= 991;
+    }
+    
+    isMobile() {
+        return window.innerWidth < 768;
+    }
+    
+    isDesktop() {
+        return window.innerWidth >= 992;
+    }
+    
+    handleResponsiveLayout() {
+        const isTabletView = this.isTablet();
+        const isMobileView = this.isMobile();
+        
+        // Log current screen size for debugging
+        console.log(`Screen size: ${window.innerWidth}px - ${isMobileView ? 'Mobile' : isTabletView ? 'Tablet' : 'Desktop'}`);
+        
+        // Ensure mobile menu is hidden on tablet and desktop
+        if (!isMobileView) {
+            this.closeMobileMenu();
+        }
+        
+        // Adjust grid layouts for tablet
+        if (isTabletView) {
+            document.body.classList.add('tablet-view');
+            document.body.classList.remove('mobile-view', 'desktop-view');
+        } else if (isMobileView) {
+            document.body.classList.add('mobile-view');
+            document.body.classList.remove('tablet-view', 'desktop-view');
+        } else {
+            document.body.classList.add('desktop-view');
+            document.body.classList.remove('tablet-view', 'mobile-view');
+        }
+    }
     setupMobileMenu() {
         console.log('Setting up mobile menu...');
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
