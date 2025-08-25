@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Frontend Developer",
+    "company": "TechCorp",
+    "logo": "TC",
+    "location": "San Francisco, CA",
+    "type": "Full-time",
+    "experience": "Senior",
+    "salaryMin": 120000,
+    "salaryMax": 160000,
+    "tags": ["React", "TypeScript", "Next.js", "GraphQL"],
+    "postedAt": "2024-01-20",
+    "description": "We're looking for a senior frontend developer to join our growing team and help build the next generation of our platform. You'll work with modern technologies and have the opportunity to make a significant impact on our product direction.",
+    "requirements": [
+      "5+ years of React development experience",
+      "Strong TypeScript proficiency",
+      "Experience with modern build tools and CI/CD",
+      "Team leadership and mentoring experience",
+      "Bachelor's degree in Computer Science or equivalent"
+    ],
+    "benefits": [
+      "Comprehensive health insurance",
+      "401(k) matching up to 6%",
+      "Flexible remote work policy",
+      "Professional development budget",
+      "Stock options"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Product Manager",
+    "company": "StartupXYZ",
+    "logo": "SX",
+    "location": "New York, NY",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 100000,
+    "salaryMax": 140000,
+    "tags": ["Product Strategy", "Analytics", "Agile", "User Research"],
+    "postedAt": "2024-01-19",
+    "description": "Join our product team and help shape the future of our platform. We're looking for a data-driven product manager who can work cross-functionally to deliver exceptional user experiences.",
+    "requirements": [
+      "3+ years of product management experience",
+      "Data-driven decision making approach",
+      "Experience with user research and analytics",
+      "Strong cross-functional collaboration skills",
+      "MBA or equivalent experience preferred"
+    ],
+    "benefits": [
+      "Equity package",
+      "Flexible PTO policy",
+      "Learning and development budget",
+      "Health and wellness stipend",
+      "Catered lunch"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Full Stack Engineer",
+    "company": "InnovateLab",
+    "logo": "IL",
+    "location": "Austin, TX",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 90000,
+    "salaryMax": 130000,
+    "tags": ["JavaScript", "Node.js", "Python", "AWS"],
+    "postedAt": "2024-01-18",
+    "description": "We're seeking a versatile full stack engineer to work on exciting projects across our technology stack. You'll have the opportunity to work with cutting-edge technologies and make a real impact.",
+    "requirements": [
+      "3+ years of full stack development",
+      "Proficiency in JavaScript and Node.js",
+      "Experience with cloud platforms (AWS/GCP)",
+      "Strong problem-solving skills",
+      "Agile development experience"
+    ],
+    "benefits": [
+      "Competitive salary and equity",
+      "Remote-first culture",
+      "Top-tier health benefits",
+      "Annual team retreats",
+      "Unlimited PTO"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "UX/UI Designer",
+    "company": "DesignStudio",
+    "logo": "DS",
+    "location": "Los Angeles, CA",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 80000,
+    "salaryMax": 110000,
+    "tags": ["Figma", "User Research", "Prototyping", "Design Systems"],
+    "postedAt": "2024-01-17",
+    "description": "We're looking for a creative UX/UI designer to join our design team. You'll work on user-centered design solutions that delight our customers and drive business results.",
+    "requirements": [
+      "3+ years of UX/UI design experience",
+      "Proficiency in Figma and design tools",
+      "Experience with user research methodologies",
+      "Portfolio demonstrating design process",
+      "Strong communication and collaboration skills"
+    ],
+    "benefits": [
+      "Creative and collaborative environment",
+      "Professional development opportunities",
+      "Health and dental insurance",
+      "Flexible work arrangements",
+      "Design conference budget"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "CloudTech",
+    "logo": "CT",
+    "location": "Seattle, WA",
+    "type": "Full-time",
+    "experience": "Senior",
+    "salaryMin": 110000,
+    "salaryMax": 150000,
+    "tags": ["Kubernetes", "Docker", "CI/CD", "Terraform"],
+    "postedAt": "2024-01-16",
+    "description": "Join our infrastructure team and help build scalable, reliable systems that power our platform. You'll work with modern DevOps tools and practices to ensure our applications run smoothly.",
+    "requirements": [
+      "4+ years of DevOps experience",
+      "Strong experience with Kubernetes and Docker",
+      "Infrastructure as Code (Terraform, CloudFormation)",
+      "CI/CD pipeline design and implementation",
+      "Cloud platform expertise (AWS, Azure, GCP)"
+    ],
+    "benefits": [
+      "Competitive compensation package",
+      "Stock options",
+      "Comprehensive benefits",
+      "Professional certification reimbursement",
+      "Flexible work schedule"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Data Scientist",
+    "company": "DataCorp",
+    "logo": "DC",
+    "location": "Boston, MA",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 95000,
+    "salaryMax": 135000,
+    "tags": ["Python", "Machine Learning", "SQL", "TensorFlow"],
+    "postedAt": "2024-01-15",
+    "description": "We're seeking a data scientist to help us unlock insights from our data and build predictive models that drive business decisions. You'll work with large datasets and cutting-edge ML techniques.",
+    "requirements": [
+      "3+ years of data science experience",
+      "Strong Python and SQL skills",
+      "Experience with ML frameworks (TensorFlow, PyTorch)",
+      "Statistical analysis and modeling expertise",
+      "PhD in related field preferred"
+    ],
+    "benefits": [
+      "Research and development focus",
+      "Conference presentation opportunities",
+      "Flexible remote work",
+      "Health and wellness benefits",
+      "Sabbatical program"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Mobile Developer (iOS)",
+    "company": "AppStudio",
+    "logo": "AS",
+    "location": "Remote",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 85000,
+    "salaryMax": 120000,
+    "tags": ["Swift", "iOS", "UIKit", "SwiftUI"],
+    "postedAt": "2024-01-14",
+    "description": "Join our mobile team and help build amazing iOS applications that millions of users love. We're looking for a passionate iOS developer who wants to create exceptional mobile experiences.",
+    "requirements": [
+      "3+ years of iOS development experience",
+      "Proficiency in Swift and iOS frameworks",
+      "App Store publication experience",
+      "Understanding of mobile design patterns",
+      "Experience with testing and debugging"
+    ],
+    "benefits": [
+      "100% remote work",
+      "Flexible hours",
+      "Device and equipment allowance",
+      "Health insurance",
+      "Annual company meetup"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Marketing Manager",
+    "company": "GrowthCo",
+    "logo": "GC",
+    "location": "Chicago, IL",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 70000,
+    "salaryMax": 95000,
+    "tags": ["Digital Marketing", "SEO", "Content Strategy", "Analytics"],
+    "postedAt": "2024-01-13",
+    "description": "We're looking for a creative marketing manager to develop and execute marketing strategies that drive growth and brand awareness. You'll work across multiple channels and campaigns.",
+    "requirements": [
+      "3+ years of marketing experience",
+      "Digital marketing expertise",
+      "Content creation and strategy skills",
+      "Analytics and reporting experience",
+      "Bachelor's degree in Marketing or related field"
+    ],
+    "benefits": [
+      "Creative freedom",
+      "Marketing conference budget",
+      "Flexible PTO",
+      "Health and dental coverage",
+      "Performance bonuses"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Backend Engineer",
+    "company": "ScaleTech",
+    "logo": "ST",
+    "location": "Denver, CO",
+    "type": "Full-time",
+    "experience": "Senior",
+    "salaryMin": 105000,
+    "salaryMax": 145000,
+    "tags": ["Java", "Spring Boot", "Microservices", "PostgreSQL"],
+    "postedAt": "2024-01-12",
+    "description": "Join our backend team and help build scalable, high-performance APIs and services. We're looking for an experienced engineer who can architect and implement complex systems.",
+    "requirements": [
+      "5+ years of backend development",
+      "Strong Java and Spring experience",
+      "Microservices architecture knowledge",
+      "Database design and optimization",
+      "API design and development"
+    ],
+    "benefits": [
+      "Competitive salary and equity",
+      "Technical leadership opportunities",
+      "Professional development budget",
+      "Health and retirement benefits",
+      "Flexible work arrangements"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Cybersecurity Analyst",
+    "company": "SecureTech",
+    "logo": "SE",
+    "location": "Washington, DC",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 80000,
+    "salaryMax": 115000,
+    "tags": ["Security", "Incident Response", "SIEM", "Compliance"],
+    "postedAt": "2024-01-11",
+    "description": "We're seeking a cybersecurity analyst to help protect our organization from threats and ensure compliance with security standards. You'll work on threat detection, incident response, and security monitoring.",
+    "requirements": [
+      "3+ years of cybersecurity experience",
+      "Knowledge of security frameworks and standards",
+      "Experience with SIEM tools",
+      "Incident response and forensics skills",
+      "Security certifications preferred (CISSP, CEH)"
+    ],
+    "benefits": [
+      "Security clearance sponsorship",
+      "Certification reimbursement",
+      "Competitive compensation",
+      "Health and life insurance",
+      "Professional development"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Sales Representative",
+    "company": "SalesForce Pro",
+    "logo": "SF",
+    "location": "Miami, FL",
+    "type": "Full-time",
+    "experience": "Entry-level",
+    "salaryMin": 45000,
+    "salaryMax": 70000,
+    "tags": ["B2B Sales", "CRM", "Lead Generation", "Customer Relations"],
+    "postedAt": "2024-01-10",
+    "description": "Join our dynamic sales team and help grow our customer base. We're looking for motivated individuals who want to build a career in B2B sales with excellent growth opportunities.",
+    "requirements": [
+      "1+ years of sales experience",
+      "Strong communication and interpersonal skills",
+      "CRM software experience",
+      "Goal-oriented mindset",
+      "Bachelor's degree preferred"
+    ],
+    "benefits": [
+      "Base salary plus commission",
+      "Uncapped earning potential",
+      "Sales training program",
+      "Health and dental insurance",
+      "Career advancement opportunities"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Content Writer",
+    "company": "ContentHub",
+    "logo": "CH",
+    "location": "Remote",
+    "type": "Part-time",
+    "experience": "Entry-level",
+    "salaryMin": 35000,
+    "salaryMax": 50000,
+    "tags": ["Content Writing", "SEO", "Copywriting", "Research"],
+    "postedAt": "2024-01-09",
+    "description": "We're looking for a talented content writer to create engaging blog posts, articles, and marketing copy. This is a great opportunity for someone looking to build their writing portfolio.",
+    "requirements": [
+      "1+ years of writing experience",
+      "Strong research and writing skills",
+      "SEO knowledge",
+      "Attention to detail",
+      "Portfolio of writing samples"
+    ],
+    "benefits": [
+      "Flexible remote work",
+      "Byline credit",
+      "Writing skill development",
+      "Health stipend",
+      "Professional networking opportunities"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Quality Assurance Engineer",
+    "company": "TestLab",
+    "logo": "TL",
+    "location": "Phoenix, AZ",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 70000,
+    "salaryMax": 95000,
+    "tags": ["Testing", "Automation", "Selenium", "Quality Assurance"],
+    "postedAt": "2024-01-08",
+    "description": "Join our QA team and help ensure the quality of our software products. We're looking for a detail-oriented engineer who can design and implement comprehensive testing strategies.",
+    "requirements": [
+      "3+ years of QA experience",
+      "Test automation experience",
+      "Knowledge of testing frameworks",
+      "Bug tracking and reporting skills",
+      "Agile methodology experience"
+    ],
+    "benefits": [
+      "Quality-focused culture",
+      "Training and certification support",
+      "Health and dental benefits",
+      "401(k) matching",
+      "Flexible work schedule"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Project Manager",
+    "company": "ManageCorp",
+    "logo": "MC",
+    "location": "Portland, OR",
+    "type": "Full-time",
+    "experience": "Senior",
+    "salaryMin": 85000,
+    "salaryMax": 115000,
+    "tags": ["Project Management", "Agile", "Scrum", "Leadership"],
+    "postedAt": "2024-01-07",
+    "description": "We're seeking an experienced project manager to lead complex projects and coordinate cross-functional teams. You'll be responsible for ensuring projects are delivered on time and within budget.",
+    "requirements": [
+      "5+ years of project management experience",
+      "PMP or Agile certification preferred",
+      "Strong leadership and communication skills",
+      "Experience with project management tools",
+      "Risk management and problem-solving abilities"
+    ],
+    "benefits": [
+      "Leadership development programs",
+      "PMP certification support",
+      "Competitive salary and bonus",
+      "Health and retirement benefits",
+      "Flexible work options"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Social Media Manager",
+    "company": "SocialBuzz",
+    "logo": "SB",
+    "location": "Nashville, TN",
+    "type": "Full-time",
+    "experience": "Entry-level",
+    "salaryMin": 40000,
+    "salaryMax": 60000,
+    "tags": ["Social Media", "Content Creation", "Community Management", "Analytics"],
+    "postedAt": "2024-01-06",
+    "description": "Join our marketing team as a social media manager and help build our brand presence across all social platforms. You'll create engaging content and manage our online community.",
+    "requirements": [
+      "2+ years of social media experience",
+      "Content creation skills",
+      "Knowledge of social media platforms",
+      "Analytics and reporting experience",
+      "Creative mindset"
+    ],
+    "benefits": [
+      "Creative environment",
+      "Social media training",
+      "Health insurance",
+      "Flexible work schedule",
+      "Professional development"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Business Analyst",
+    "company": "AnalyticsPro",
+    "logo": "AP",
+    "location": "Atlanta, GA",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 75000,
+    "salaryMax": 100000,
+    "tags": ["Business Analysis", "Requirements Gathering", "Process Improvement", "SQL"],
+    "postedAt": "2024-01-05",
+    "description": "We're looking for a business analyst to help bridge the gap between business needs and technical solutions. You'll work with stakeholders to gather requirements and improve processes.",
+    "requirements": [
+      "3+ years of business analysis experience",
+      "Requirements gathering and documentation",
+      "Process improvement methodologies",
+      "SQL and data analysis skills",
+      "Strong analytical thinking"
+    ],
+    "benefits": [
+      "Process improvement focus",
+      "Training and certification",
+      "Health and dental coverage",
+      "401(k) with matching",
+      "Professional development budget"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "HR Generalist",
+    "company": "PeopleFirst",
+    "logo": "PF",
+    "location": "Minneapolis, MN",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 55000,
+    "salaryMax": 75000,
+    "tags": ["HR", "Recruiting", "Employee Relations", "Benefits"],
+    "postedAt": "2024-01-04",
+    "description": "Join our HR team and help create a positive workplace culture. You'll handle recruiting, employee relations, and benefits administration while supporting our growing team.",
+    "requirements": [
+      "3+ years of HR experience",
+      "Recruiting and talent acquisition",
+      "Employee relations skills",
+      "Benefits administration knowledge",
+      "HR certification preferred"
+    ],
+    "benefits": [
+      "People-focused culture",
+      "HR certification support",
+      "Comprehensive benefits",
+      "Professional development",
+      "Work-life balance"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Customer Success Manager",
+    "company": "SuccessCorp",
+    "logo": "SC",
+    "location": "San Diego, CA",
+    "type": "Full-time",
+    "experience": "Mid-level",
+    "salaryMin": 65000,
+    "salaryMax": 85000,
+    "tags": ["Customer Success", "Account Management", "SaaS", "Relationship Building"],
+    "postedAt": "2024-01-03",
+    "description": "We're seeking a customer success manager to ensure our clients achieve their goals with our platform. You'll build strong relationships and drive customer satisfaction and retention.",
+    "requirements": [
+      "2+ years of customer success experience",
+      "SaaS industry experience",
+      "Strong communication skills",
+      "Relationship building abilities",
+      "Data-driven approach"
+    ],
+    "benefits": [
+      "Customer-centric culture",
+      "Commission opportunities",
+      "Health and wellness benefits",
+      "Professional training",
+      "Career growth paths"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Financial Analyst",
+    "company": "FinanceHub",
+    "logo": "FH",
+    "location": "Charlotte, NC",
+    "type": "Full-time",
+    "experience": "Entry-level",
+    "salaryMin": 50000,
+    "salaryMax": 70000,
+    "tags": ["Financial Analysis", "Excel", "Forecasting", "Reporting"],
+    "postedAt": "2024-01-02",
+    "description": "Join our finance team as a financial analyst and help drive business decisions through data analysis and financial modeling. Great opportunity for career growth in finance.",
+    "requirements": [
+      "1+ years of finance experience",
+      "Strong Excel and analytical skills",
+      "Financial modeling knowledge",
+      "Attention to detail",
+      "Finance or accounting degree"
+    ],
+    "benefits": [
+      "Professional development",
+      "CFA certification support",
+      "Health and retirement benefits",
+      "Mentorship program",
+      "Career advancement"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Technical Writer",
+    "company": "DocuTech",
+    "logo": "DT",
+    "location": "Remote",
+    "type": "Contract",
+    "experience": "Mid-level",
+    "salaryMin": 60000,
+    "salaryMax": 80000,
+    "tags": ["Technical Writing", "Documentation", "API", "Software"],
+    "postedAt": "2024-01-01",
+    "description": "We need a technical writer to create clear, comprehensive documentation for our software products. You'll work with engineering teams to document APIs, user guides, and technical processes.",
+    "requirements": [
+      "3+ years of technical writing experience",
+      "Software documentation experience",
+      "API documentation skills",
+      "Strong writing and editing abilities",
+      "Technical background preferred"
+    ],
+    "benefits": [
+      "Remote work flexibility",
+      "Technical skill development",
+      "Competitive hourly rate",
+      "Professional portfolio building",
+      "Collaborative environment"
+    ]
+  }
+]
